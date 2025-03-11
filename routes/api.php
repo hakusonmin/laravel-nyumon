@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\ApiDiaryController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
+
+Route::get('/api/diary', [ApiDiaryController::class, 'index']);
+
+
